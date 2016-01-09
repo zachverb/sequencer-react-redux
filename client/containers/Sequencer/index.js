@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './styles.less';
 
 export class Sequencer extends Component {
   static propTypes = {
@@ -6,10 +7,10 @@ export class Sequencer extends Component {
   }
 
   render() {
-   return (
-     <div class="grid">
-       {this.props.children}
-     </div>
-   );
+    return (
+      <div className="grid">
+        {this.props.children}
+      </div>
+    );
   }
 }
