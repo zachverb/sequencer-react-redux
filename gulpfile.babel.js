@@ -13,7 +13,7 @@ gulp.task('webpack', (cb) => {
   });
 });
 
-gulp.task('webpack-dev-server', function(cb) {
+gulp.task('webpack-dev-server', (cb) => {
   var mergeConfig = Object.assign({}, webpackConfig, devConfig);
   var compiler = webpack(mergeConfig);
 
