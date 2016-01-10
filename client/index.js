@@ -6,6 +6,7 @@ import {Router, Redirect} from 'react-router';
 import configureStore from 'stores/configureStore';
 import routes from './routes';
 import {syncReduxAndRouter} from 'redux-simple-router';
+import 'bootstrap-css-only/css/bootstrap.min.css';
 
 const store = configureStore();
 const history = createHistory();

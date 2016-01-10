@@ -7,7 +7,7 @@ app.use(express.static('public'));
 app.use(require('morgan')('short'));
 
 app.get('/', function(request, response) {
-  response.sendFile(path.resolve('public', 'views', 'index.html'));
+  response.sendFile(path.resolve('index.html'));
 });
 
 app.listen(port, function() {
