@@ -21,10 +21,11 @@ gulp.task('webpack-dev-server', function(cb) {
     publicPath: '/build/',
     hot: true,
     stats: true,
+    headers: { 'Access-Control-Allow-Origin': '*' },
     colors: true
-  }).listen(8080, 'localhost', (err) => {
+  }).listen(8081, 'localhost', (err) => {
     if (err) throw new gutil.PluginError('webpack-dev-server', err);
-    gutil.log('[webpack-dev-server]', 'localhost:8080/webpack-dev-server/index.html');
+    gutil.log('[webpack-dev-server]', 'localhost:8081/webpack-dev-server/index.html');
     cb();
   });
 });

@@ -7,13 +7,19 @@ var ROOT_DIR = __dirname;
 module.exports = {
   devtool: 'eval',
   entry: [
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
+    'webpack-dev-server/client?http://localhost:8081',
+    'webpack/hot/dev-server',
     './client/index.js'
   ],
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],
+  historyApiFallback: true,
+  output: {
+    path: path.join(ROOT_DIR, 'public', 'build'),
+    filename: 'bundle.js',
+    publicPath: 'http://localhost:8080/build/'
+  },
   module: { 
     loaders: [
       { test: /\.jsx?$/, loader: 'babel', exclude: path.join(ROOT_DIR, 'node_modules')},

@@ -3,9 +3,10 @@ import './styles.less';
 
 export class Pad extends Component {
   render() {
-    return(
+    console.log('hi');
+    return (
       <div className="pad">
-        
+        ugh
       </div> 
     );
   }
