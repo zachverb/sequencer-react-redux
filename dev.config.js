@@ -18,11 +18,11 @@ module.exports = {
   output: {
     path: path.join(ROOT_DIR, 'public', 'build'),
     filename: 'bundle.js',
-    publicPath: 'http://localhost:8080/build/'
+    publicPath: 'http://localhost:8081/build/'
   },
   module: { 
     loaders: [
-      { test: /\.jsx?$/, loader: 'babel', exclude: path.join(ROOT_DIR, 'node_modules')},
+      { test: /\.jsx?$/, loaders: ['react-hot', 'babel'], exclude: path.join(ROOT_DIR, 'node_modules')},
       { test: /\.less$/, loaders: ["style", "css", "less"]},
       { test: /\.css$/, loader: 'style-loader!css-loader' },
       { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
