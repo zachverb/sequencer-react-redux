@@ -6,21 +6,21 @@ import configureStore from 'stores/configureStore';
 import routes from './routes';
 import {syncReduxAndRouter} from 'redux-simple-router';
 import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'babel-polyfill';
 
 const store = configureStore();
 const history = createHistory();
 
 syncReduxAndRouter(history, store);
 
-export default class Main extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <Router history={history}>
-          <Redirect from="/" to="home" />
-          {routes}
-        </Router>
-      </Provider> 
-    );
-  }
+export default (props) => {
+  return (
+    <Provider store={store}>
+      <Router history={history}>
+        <Redirect from="/" to="home" />
+        {routes}
+      </Router>
+    </Provider> 
+  );
 }
+

@@ -1,10 +1,12 @@
 import {combineReducers} from 'redux';
-import {routeReducer} from 'redux-simple-router';
-import {reducer as formReducer} from 'redux-form';
+import {routeReducer as routing} from 'redux-simple-router';
+import {reducer as form} from 'redux-form';
+import sequencer from './sequencer';
 
 const rootReducer = combineReducers({
-  form: formReducer,
-  routing: routeReducer
+  form,
+  routing,
+  sequencer
 });
 
 export default rootReducer;
