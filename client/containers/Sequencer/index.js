@@ -1,19 +1,18 @@
 import React, {Component} from 'react';
+import {bindActionCreators} from 'redux';
 import {Pad} from 'components/Pad'
 import {connect} from 'react-redux';
+import * as actionCreators from 'actions/sequencer';
 import './styles.less';
 
 @connect(
-  state => state.sequencer,
+  state => state.sequencer.toJS(),
+  dispatch => bindActionCreators(actionCreators, dispatch)
 )
 export class Sequencer extends Component {
   static propTypes = {
     children: React.PropTypes.any 
   };
-
-  generateGrid() {
-    return this.props.grid.map(this.generateRow.bind(this));
-  }
 
   generateRow(row, rowNum) {
     return (
@@ -21,7 +20,7 @@ export class Sequencer extends Component {
         className="row"
         key={rowNum}
       >
-        {row.map(this.generatePad)}
+        {row.map((pad) => this.generatePad(pad))}
       </div>
     );
   }
@@ -29,16 +28,18 @@ export class Sequencer extends Component {
   generatePad(pad) {
     return (
       <Pad
-        active={pad.active}
+        {...pad}
         key={`${pad.column}-${pad.row}`}
+        toggleStep={this.props.toggleStep}
       />
     );
   }
 
   render() {
+    const {grid} = this.props;
     return (
-      <div className="ui equal width grid">
-        {this.generateGrid()} 
+      <div className="ui equal width grid sequencer container">
+        {grid.map((row, rowNum) => this.generateRow(row, rowNum))} 
       </div>
     );
   }

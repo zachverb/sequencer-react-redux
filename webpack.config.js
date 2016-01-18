@@ -27,6 +27,7 @@ module.exports = {
     alias: {
       'actions': path.resolve(ROOT_DIR, 'client', 'actions'),
       'components': path.resolve(ROOT_DIR, 'client', 'components'),
+      'constants': path.resolve(ROOT_DIR, 'client', 'constants'),
       'containers': path.resolve(ROOT_DIR, 'client', 'containers'),
       'reducers': path.resolve(ROOT_DIR, 'client', 'reducers'),
       'stores': path.resolve(ROOT_DIR, 'client', 'stores')

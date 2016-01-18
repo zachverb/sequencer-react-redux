@@ -7,6 +7,8 @@ import routes from './routes';
 import {syncReduxAndRouter} from 'redux-simple-router';
 import 'semantic-ui-css/components/grid.css'
 import 'babel-polyfill';
+import {Iterable} from 'immutable';
+Iterable.prototype[Symbol.for('get')] = function(value) {return this.get(value); };
 
 const store = configureStore();
 const history = createHistory();
