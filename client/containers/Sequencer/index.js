@@ -37,7 +37,7 @@ export class Sequencer extends Component {
 
   render() {
     return (
-      <div className="grid container-fluid">
+      <div className="ui equal width grid">
         {this.generateGrid()} 
       </div>
     );

@@ -5,7 +5,7 @@ import {Router, Redirect} from 'react-router';
 import configureStore from 'stores/configureStore';
 import routes from './routes';
 import {syncReduxAndRouter} from 'redux-simple-router';
-import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'semantic-ui-css/components/grid.css'
 import 'babel-polyfill';
 
 const store = configureStore();
